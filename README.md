@@ -32,7 +32,7 @@ Now you are ready for using the Express TS API, you can do any request to http:/
 
 ## Migrations
 
-Note: You must having your containers running
+Note: You must have your containers running
 
 In order to create a new migration run the following command:
 
@@ -43,3 +43,15 @@ In order to run the latest migration batch run the following command:
 `docker exec -it express-ts-api knex migrate:latest --knexfile /app/src/database/connection/knexfile.ts --env dev`
 
 Feel free to use any command available in the Knex CLI tool (https://knexjs.org/#Migrations-CLI)
+
+## Tests
+
+Note: You must have your containers running
+
+For unit tests, execute the following command:
+
+`docker exec -it express-ts-api npm run test:unit`
+
+For integration tests, execute the following command:
+
+`docker exec -it express-ts-api npm run test:int`
