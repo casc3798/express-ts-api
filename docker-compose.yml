@@ -1,0 +1,33 @@
+version: "3"
+services:
+  express-ts-api:
+    container_name: express-ts-api
+    restart: on-failure
+    build:
+      context: .
+      args:
+        - NODE_ENV=dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: npm run dev
+    depends_on:
+      - db-pg
+
+  db-pg:
+    container_name: db-pg
+    image: postgres:13.2
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "mypassword123"
+      POSTGRES_USER: "dbadmin"
+      POSTGRES_DB: "mydatabase"
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+
+volumes:
+  postgresql:
