@@ -58,9 +58,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/casc3798/express-ts-api"
+    "url": "https://github.com/casc3798/express-ts-sql-api"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/casc3798/express-ts-api"
+  "homepage": "https://github.com/casc3798/express-ts-sql-api"
 }
